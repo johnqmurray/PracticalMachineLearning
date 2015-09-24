@@ -109,12 +109,13 @@ randomForest(x = x, y = y, mtry = param$mtry, proximity = TRUE)
                Type of random forest: classification
                      Number of trees: 500
 No. of variables tried at each split: 25
-```` 
+``` 
 
 # Calculating the Expected Out of Sample Error
 
 The OOB value estimates the out of sample error rate. In this experiment, the initial run was surprisingly successful, with a rate less than 1 percent:
 
+```{r}
         OOB estimate of  error rate: 0.43%
 Confusion matrix:
      A    B    C    D    E  class.error
@@ -123,11 +124,13 @@ B   20 3772    5    0    0 0.0065841454
 C    0    9 3402   11    0 0.0058445354
 D    0    0   24 3190    2 0.0080845771
 E    0    0    4    6 3597 0.0027723870
+```
 
 If there had been issues with the data, the Random Forest would have been re-run using only the most important variables.
 Breiman writes: "Another useful option is to do an automatic rerun using only those variables that were most important in the original run."
 The varImp method lists the most important variables:
 
+```{r}
 varImp(myRfFitMinCols)
 rf variable importance
  
@@ -154,7 +157,7 @@ yaw_arm               11.806
 magnet_belt_y         11.602
 gyros_belt_z          11.500
 magnet_belt_x          9.782
-
+```
 
 # Predicting 20 Different Test Cases
 
@@ -166,7 +169,7 @@ myPredict <- predict(myRfFitMinCols$finalModel, newdata=inTestMinCols)
 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
  B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B
 Levels: A B C D E
-````
+```
 
 All 20 values were accepted as correct during the initial submission, so no further processing was performed. 
 
