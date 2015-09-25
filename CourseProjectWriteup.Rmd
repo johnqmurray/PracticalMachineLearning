@@ -1,6 +1,6 @@
 # Course Project Writeup
 ##  Practical Machine Learning, September 2015 
-### John Q. Murray (johnqmurray@gmail.com)
+### John Q. Murray 
 
 # Overview
 
